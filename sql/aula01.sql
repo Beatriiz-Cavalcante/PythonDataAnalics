@@ -128,11 +128,24 @@ SET rua = SUBSTRING_INDEX(SUBSTRING_INDEX(endereco, ',', 1), ',', -1),
 alter table usuarios
 drop column endereco;
 
+#Junções - join
 
+select * from usuarios
+inner join reservas
+on usuarios.id = reservas.id_usuario
+inner join destinos on reservas.id_destino = destinos.id;
 
+INSERT INTO viagens.destinos ( nome, descricao) VALUES 
+('Deestino sem reserva', 'Uma bela praia com areias brancas e mar cristalino');
 
+select * from reservas rs
+right join destinos ds
+on rs.id_destino = ds.id;
 
+#sub consultas
 
+select * from destinos
+where id not in (select id_destino from reservas);
 
 
 

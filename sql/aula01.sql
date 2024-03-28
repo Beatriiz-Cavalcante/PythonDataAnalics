@@ -147,8 +147,28 @@ on rs.id_destino = ds.id;
 select * from destinos
 where id not in (select id_destino from reservas);
 
+#funções agregadoras
 
+#select count(*) as total_usuarios from usuarios; (dessa forma para nomear a coluna)
+select count(*) from usuarios
+inner join reservas on usuarios.id = reservas.id_usuario;
 
+select max(timestampdiff(year, data_nascimento, current_date())) as maior_idade
+from usuarios;
 
+#Ordenação
 
+select count(*) from reservas
+group by id_destino;
 
+SELECT nome
+FROM usuarios
+ORDER BY nome;
+
+SELECT nome, data_nascimento
+FROM usuarios
+ORDER BY data_nascimento, nome;
+
+SELECT nome, data_nascimento
+FROM usuarios
+ORDER BY data_nascimento, nome DESC;

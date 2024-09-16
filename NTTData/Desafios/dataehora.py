@@ -4,6 +4,8 @@
 -Mostre no extrato, a data e hora de todas as transações
 '''
 
+'''Separar as funções existentes de seque, depóstio e extrato em funções. Criar duas novas funções: Cadastrar usuário(cliente) e cadastrar conta bancária'''
+
 import textwrap
 from abc import ABC, abstractclassmethod, abstractproperty
 from datetime import datetime

@@ -63,6 +63,7 @@ class PessoaFisica(Cliente):
 
 class Conta:
     def __init__(self, numero, cliente):
+        #atributos privados
         self._saldo = 0
         self._numero = numero
         self._agencia = "0001"
